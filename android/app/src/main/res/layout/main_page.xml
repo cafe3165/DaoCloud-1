@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+             xmlns:app="http://schemas.android.com/apk/res-auto"
+             xmlns:tools="http://schemas.android.com/tools"
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:id="@+id/frame"
+             tools:context=".mainPage.MainPage">
+    <RelativeLayout
+
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+        <include android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:id="@+id/topShowBlock"
+                 layout="@layout/top_block"/>
+        <FrameLayout
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/contentFrame"
+                android:layout_below="@+id/topShowBlock">
+            <FrameLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/fragment_content">
+
+            </FrameLayout>
+            <RelativeLayout android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/floatCompoents"
+            >
+                <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/floatButton"
+                        android:layout_alignRight="@+id/floatButton"
+                        android:id="@+id/selectItems">
+                    <!--<LinearLayout android:layout_width="wrap_content"-->
+                                  <!--android:layout_height="wrap_content"-->
+                                  <!--android:orientation="horizontal"-->
+                                  <!--android:id="@+id/select1"-->
+                                  <!--android:onClick="createCourse"-->
+                                  <!--android:layout_marginBottom="10dp"-->
+                    <!--&gt;-->
+                        <!--<TextView android:layout_width="wrap_content"-->
+                                  <!--android:layout_height="wrap_content"-->
+                                  <!--android:text="创建班课"-->
+                                  <!--android:layout_gravity="center_vertical"-->
+                                  <!--android:layout_marginRight="6dp"-->
+                                  <!--android:layout_centerHorizontal="true"-->
+                                  <!--android:id="@+id/createCourse"-->
+                        <!--/>-->
+                        <!--<android.support.design.widget.FloatingActionButton-->
+                                <!--android:layout_width="wrap_content"-->
+                                <!--android:layout_height="wrap_content"-->
+                                <!--android:onClick="createCourse"-->
+                                <!--app:elevation="5dp"-->
+                                <!--app:fabSize="normal"-->
+                                <!--app:backgroundTint="@color/colorAccent"-->
+                                <!--android:src="@drawable/select_icon"-->
+                        <!--/>-->
+                    <!--</LinearLayout>-->
+                    <LinearLayout android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:orientation="horizontal"
+                                  android:id="@+id/select2"
+                                  android:onClick="joinCourse"
+                                  android:layout_marginBottom="10dp"
+                    >
+                        <TextView android:layout_width="wrap_content"
+                                  android:layout_height="wrap_content"
+                                  android:text="加入班课"
+                                  android:layout_gravity="center_vertical"
+                                  android:layout_marginRight="6dp"
+                                  android:layout_centerHorizontal="true"
+                                  android:id="@+id/joinCourse"
+                        />
+                        <android.support.design.widget.FloatingActionButton
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:fabSize="normal"
+                                android:onClick="joinCourse"
+                                app:elevation="5dp"
+                                app:backgroundTint="@color/deepblue"
+                                android:src="@drawable/select_icon"
+                        />
+                    </LinearLayout>
+
+                </RelativeLayout>
+                <android.support.design.widget.FloatingActionButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/floatButton"
+                        android:src="@drawable/add"
+                        android:layout_marginBottom="90dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="20dp"
+                        android:layout_alignParentRight="true"
+                        app:fabSize="normal"
+                        app:backgroundTint="@color/deepblue"
+                        app:elevation="5dp"
+                        android:onClick="chooseItem"
+                />
+
+            </RelativeLayout>
+
+        </FrameLayout>
+
+
+        <android.support.design.widget.BottomNavigationView
+                android:id="@+id/nav_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/windowBackground"
+                android:layout_alignParentBottom="true"
+                app:menu="@menu/bottom_nav_menu" app:layout_constraintHorizontal_bias="0.0"/>
+
+    </RelativeLayout>
+</FrameLayout>

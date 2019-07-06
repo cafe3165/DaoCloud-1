@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical">
+    <include android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:id="@+id/classTittle"
+             android:layout_marginBottom="30dp"
+             layout="@layout/top_block"/>
+
+
+    <FrameLayout android:layout_width="match_parent"
+                 android:layout_height="wrap_content"
+                 android:layout_marginTop="20dp"
+    >
+        <com.example.qd.view.ClockInButton
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:layout_gravity="center"
+
+                app:circleColor = "@color/deepblue"
+                android:id="@+id/waveButton"
+                android:onClick="wave"
+        />
+        <TextView android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:textSize="18sp"
+                  android:textColor="@color/white"
+                  android:text="点击签到"
+                  android:layout_gravity="center"
+        />
+
+    </FrameLayout>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:textSize="18sp"
+              android:layout_marginBottom="6dp"
+              android:text="签到记录"
+    />
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        <android.support.v7.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/clockInInfos"
+        />
+    </LinearLayout>
+</LinearLayout>
